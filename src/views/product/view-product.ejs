@@ -1,0 +1,76 @@
+   <!-- Start Most Viewed Products Area -->
+   <% var productView %>
+   <section class="featured-products-area bg-fafafa pt-100 pb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>Most Viewed Products This Month</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+        </div>
+        
+        <% if(productView.length) { %> 
+        <div class="featured-products-slider owl-carousel owl-theme">
+            <% for(let i = 0; i < productView.length; i++) { %>
+            <div class="featured-products-item">
+                <div class="products-image">
+                    <a href="shop-details"><img src="<%= `/product_img/${productView[i]._id}.jpg` %>" alt="image"></a>
+                    
+                    <ul class="products-action">
+                        <li>
+                            <a href="#" data-tooltip="tooltip"data-placement="top" title="Add to Cart" >
+                                <form action="index-2" method="POST" class="product-cart" >
+                                    <label class="d-none">
+                                        <input type="hidden" class="visually-hidden" name="product_id" value="<%= `${product[i]._id}` %>">
+                                    </label>
+                                    <label class="m-0 p-0">
+                                        <i class="flaticon-shopping-cart" data-id="<%= `${product[i]._id}` %>"></i>
+                                    <button type="submit" class="d-none">
+                                    </button>
+                                    </label>
+                                </form>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="flaticon-heart"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" data-tooltip="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#productsQuickView">
+                                <i class="flaticon-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="new">
+                        <span>New</span>
+                    </div>
+                </div>
+                
+                <div class="products-content">
+                    <h3>
+                        <a href="shop-details"><%= productView[i].product_name %></a>
+                    </h3>
+                    <div class="price">
+                        <span class="new-price">$<%= productView[i].new_pricing %></span>
+                        <span class="old-price">$<%= productView[i].old_pricing %></span>
+                    </div>
+                    <ul class="rating">
+                        <li>
+                            <% for(let j = 0; j < productView[i].total_count; j++) { %>
+                                <i class='bx bxs-star'></i>
+                            <% } %>   
+                            <% for(let k = 0; k < 5 - productView[i].total_count; k++) { %>
+                                <i class='bx bx-star'></i>
+                            <% } %>     
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <% } %>
+        </div>
+        <% }else{ %> 
+            <h1>Eng ko'rilgan mahsulotlar yo'q hozircha negadir</h1>    
+            <% } %>
+            
+        </div>
+    </section>
+    <!-- End Most Viewed Products Area -->

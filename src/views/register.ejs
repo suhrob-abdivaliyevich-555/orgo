@@ -1,0 +1,62 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+<% var error %>
+<!-- Start Page Banner -->
+<div class="page-banner-area item-bg4">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Register</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>Register</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+
+
+
+<!-- Start Register Area -->
+<section class="register-area ptb-100">
+    <div class="container">
+        <div class="register-form">
+            <h2>Register</h2>
+            <% if(error) {%>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+                <% } %>
+            <form action="register" method="POST">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Username">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+                
+                <p class="description">The password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ & )</p>
+                
+                <button type="submit" class="default-btn">Register</button>
+            </form>
+            <a href="login" class="default-btn w-100 text-center mt-2">Login Page</a>
+        </div>
+    </div>
+</section>
+<!-- End Register Area -->
+
+<%- include('parts/footer') %>

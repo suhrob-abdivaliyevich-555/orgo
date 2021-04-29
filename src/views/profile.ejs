@@ -1,0 +1,80 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<!-- Start Page Banner -->
+<div class="page-banner-area item-bg2">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Profile</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>Profile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+<section class="cart-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <% if(productProfileArray.length) { %>
+                    <form>
+                        <div class="cart-table table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Unit Price</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(let i = 0; i < productProfileArray.length; i++) { %>
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                <a href="#">
+                                                    <img src="<%= `/product_img/${productProfileArray[i]._id}.jpg` %>" alt="item">
+                                                </a>
+                                            </td>
+                                            <td class="product-name">
+                                                <a href="shop-details"><%= productProfileArray[i].product_name %></a>
+                                            </td>
+                                            <td class="product-price">
+                                                <div>$<span class="unit-amount"><%= productProfileArray[i].new_pricing %></span></div>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="cart-buttons">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-7 col-sm-7 col-md-7">
+                                        <a href="shop-1" class="default-btn">
+                                            Back to Shop
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                        <% }else { %>
+                            <h1>Bo'sh</h1>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+<%- include('section/subsicribe') %>
+<script src="/js/cart.js"></script>
+<%- include('parts/footer') %>

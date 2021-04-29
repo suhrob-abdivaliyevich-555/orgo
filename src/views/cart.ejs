@@ -1,0 +1,141 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<!-- Start Page Banner -->
+<div class="page-banner-area item-bg2">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Cart</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>Cart</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+
+<!-- Start Cart Area -->
+<section class="cart-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <% if(productIdArray.length) { %>
+                    <form>
+                        <div class="cart-table table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Unit Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(let i = 0; i < productIdArray.length; i++) { %>
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                <a href="#">
+                                                    <img src="<%= `/product_img/${productIdArray[i]._id}.jpg` %>" alt="item">
+                                                </a>
+                                            </td>
+                                            <td class="product-name">
+                                                <a href="shop-details"><%= productIdArray[i].product_name %></a>
+                                            </td>
+                                            <td class="product-price">
+                                                <div>$<span class="unit-amount"><%= productIdArray[i].new_pricing %></span></div>
+                                            </td>
+                                            <td class="product-quantity">
+                                                <div class="input-counter" >
+                                                    <div class="d-none product-counter"><%= `${productIdArray[i]._id}` %></div>
+                                                    <span class="minus-btn" data-counter="<%= `${productIdArray[i]._id}` %>">
+                                                        <i class='bx bx-minus' data-counter="<%= `${productIdArray[i]._id}` %>"></i>
+                                                    </span>
+                                                    
+                                                    <span class="plus-btn" data-counter="<%= `${productIdArray[i]._id}` %>">
+                                                        <i class='bx bx-plus' data-counter="<%= `${productIdArray[i]._id}` %>"></i>
+                                                        
+                                                    </span>
+                                                    <input type="text" value="1" class="product-cuantity">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="subtotal-box">$<span class="subtotal-amount"><%= productIdArray[i].new_pricing %></span></div>
+                                            </td>
+                                            <td class="product-subtotal ">
+                                                <a href="#" class="remove">
+                                                    <form action="cart" method="POST" class="product-remove" >
+                                                        <label class="d-none">
+                                                            <input type="hidden" class="visually-hidden" name="product_remove" value="<%= `${productIdArray[i]._id}` %>">
+                                                        </label>
+                                                        <label class="mb-4 ">
+                                                            <i class="bx bx-trash" data-remove="<%= `${productIdArray[i]._id}` %>"></i>
+                                                            <button type="submit" class="d-none">
+                                                            </button>
+                                                        </label>
+                                                    </form>
+                                                </a>
+                                            </td>
+                                            <td class="product-pricing px-4 mx-4">
+                                                <a href="profile"> 
+                                                    <form action="profile" method="POST" class="product-pricing" >
+                                                        <label class="d-none">
+                                                            <input type="hidden" class="visually-hidden" name="product_pricing" value="<%= `${productIdArray[i]._id}` %>">
+                                                        </label>
+                                                        <label class="m-0 p-0">
+                                                            <p class="product-xaridi" data-pricing="<%= `${productIdArray[i]._id}` %>">Sotib olish</p>
+                                                            <button type="submit" class="d-none">
+                                                            </button>
+                                                        </label>
+                                                    </form>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="cart-buttons">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-7 col-sm-7 col-md-7">
+                                        <a href="shop-1" class="default-btn">
+                                            Back to Shop
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="cart-totals">
+                                <h3>Cart Totals</h3>
+                                <ul>
+                                    <li>Subtotal 
+                                        <span>$<span class="subtotal-result">1683.50</span></span>
+                                    </li>
+                                    <li>Shipping 
+                                        <span>$<span class="shipping-result">0.00</span></span>
+                                    </li>
+                                    <li>Total 
+                                        <span>$<span class="total-result"><b>$1713.50</b></span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                        <% }else { %>
+                            <h1>Bo'sh</h1>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Cart Area -->
+            <script src="/js/cart.js"></script>
+            <%- include('parts/footer') %>

@@ -1,0 +1,127 @@
+<%- include('parts/header') %>
+<% var error %>
+<!-- Start Contact Area -->
+<section class="contact-area">
+    <div class="container">
+        <div class="section-title mt-4">
+            <h2>Product Page</h2>
+            <h4 class="alert alert-primary">
+                Eslatma: Hurmatli admin janoblari, Mahsulotni malumotlarini bazaga yuklaganingizdan so'ng rasm yuklashingiz so'raladi, bu sun'iy intellekt dastur emas:))) mahsulotni rasmini yuklamasingiz saytda rasmsiz turuvraaadi
+            </h4>
+            <p>Bu yerdan siz saytga yangi product qo'shishingiz mumkin bo'ladi</p>
+        </div>
+        
+        <div class="contact-form">
+            <form id="contactForm" action="./product" method="POST">
+                <% if(error) {%>
+                    <div class="alert alert-danger">
+                        <%= error %>
+                    </div>
+                    <% } %>
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <label>Product Name*</label>
+                            <input type="text" name="product_name" id="product_name" class="form-control" required data-error="Please enter your Product name">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <label>New pricing*</label>
+                            <input type="number" name="new_pricing" id="new_pricing" class="form-control" required data-error="Please enter your new pricing">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <label>Old pricing*</label>
+                            <input type="number" name="old_pricing" id="old_pricing" required data-error="Please enter your old_pricing" class="form-control">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <label>Total count*</label>
+                            <input type="number" name="total_count" id="total_count" class="form-control" required data-error="Please enter your Total Count">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="form-group d-flex">
+                            <label for="new">New</label>
+                            <input type="radio" name="news" id="news" value="true" class="form-control" data-error="Please enter your subject" >
+                            <input type="radio" name="news" id="news" value="false" class="form-control" data-error="Please enter your subject" checked>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="form-group d-flex">
+                            <label for="top">Top</label>
+                            <input type="radio" name="top" id="top" value="true" class="form-control" data-error="Please enter your subject">
+                            <input type="radio" name="top" id="top" value="false" class="form-control" data-error="Please enter your subject" checked>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="form-group d-flex">
+                            <label for="best">Best</label>
+                            <input type="radio" name="best" id="best" value="true" class="form-control" data-error="Please enter your subject">
+                            <input type="radio" name="best" id="best" value="false" class="form-control" data-error="Please enter your subject" checked>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="form-group d-flex">
+                            <label for="view">View</label>
+                            <input type="radio" name="view" id="view" value="true" class="form-control" data-error="Please enter your subject">
+                            <input type="radio" name="view" id="view" value="false" class="form-control" data-error="Please enter your subject" checked>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label>Product Message*</label>
+                            <textarea name="product_message" class="form-control" id="product_message" cols="30" rows="6" required data-error="Write your product_message"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label>Description Message*</label>
+                            <textarea name="description_message" class="form-control" id="description_message" cols="30" rows="6" required data-error="Write your description_message"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12 col-md-12">
+                        <button type="submit" class="default-btn">
+                            Send Product
+                        </button>
+                        
+                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </form>
+            <form>
+                <div class="col-lg-12 col-md-12 mb-4 mt-4">
+                    <div class="form-group custom-file">
+                        <label class="custom-file-label" for="customFile" >Product File*</label>
+                        <input type="file" name="file" accept="image/*" class=" custom-file-input" id="customFile" data-error="Please enter your File">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- End Contact Area -->
+<script src="/js/product.js"></script>
+<%- include('parts/footer') %>
+

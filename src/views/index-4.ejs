@@ -1,0 +1,448 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+        <!-- Start Main Slider Area -->
+        <div class="main-slider-area">
+            <div class="home-slides owl-carousel owl-theme">
+                <div class="main-slider-item main-slider-two">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="container-fluid">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="main-slider-content">
+                                            <span>Take Natural Taste From Our Shop</span>
+                                            <h1>Organic Food Is Good For Health</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                                            <div class="slider-btn">
+                                                <a href="shop-1" class="default-btn">Our Shop</a>
+                                                <a href="cart" class="optional-btn">Add to Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="main-slider-image-wrap">
+                                            <img src="/img/main-slider/main-slider-2.jpg" alt="image">
+
+                                            <div class="slider-shape">
+                                                <img src="/img/main-slider/main-slider-shape.png" alt="image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-slider-item main-slider-two">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="container-fluid">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="main-slider-content">
+                                            <span>Take Natural Taste From Our Shop</span>
+                                            <h1>Vegetables Good For Health</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                                            <div class="slider-btn">
+                                                <a href="shop-1" class="default-btn">Our Shop</a>
+                                                <a href="cart" class="optional-btn">Add to Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="main-slider-image-wrap">
+                                            <img src="/img/main-slider/main-slider-3.jpg" alt="image">
+
+                                            <div class="slider-shape">
+                                                <img src="/img/main-slider/main-slider-shape.png" alt="image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-slider-shape">
+                <div class="shape-1">
+                    <img src="/img/main-slider/slider-shape-1.png" alt="image">
+                </div>
+
+                <div class="shape-2">
+                    <img src="/img/main-slider/slider-shape-2.png" alt="image">
+                </div>
+            </div>
+        </div>
+        <!-- End Main Slider Area -->
+
+        <!-- Start Special Features Area -->
+        <section class="special-features-area pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Special Features</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-special-features">
+                            <div class="image">
+                                <img src="/img/special-features/special-features-1.png" alt="image">
+                            </div>
+
+                            <div class="content">
+                                <h3>Fresh Organic Food Provides</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt</p>
+                                <a href="#" class="read-btn">Read More +</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-special-features">
+                            <div class="image">
+                                <img src="/img/special-features/special-features-2.png" alt="image">
+                            </div>
+
+                            <div class="content">
+                                <h3>Fast & Easy Food Delivery</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt</p>
+                                <a href="#" class="read-btn">Read More +</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+                        <div class="single-special-features">
+                            <div class="image">
+                                <img src="/img/special-features/special-features-3.png" alt="image">
+                            </div>
+
+                            <div class="content">
+                                <h3>Very Easy Payment System</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt</p>
+                                <a href="#" class="read-btn">Read More +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Special Features Area -->
+
+    <!-- Start Top Products Area -->
+    <% productTop %>
+    <section class="top-products-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trending Products</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+            </div>
+            
+            <div class="row">
+                <% if(productTop.length) { %>
+                    <% for(let i = 0; i < productTop.length; i++) { %>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="top-products-item">
+                                <div class="products-image">
+                                    <a href="shop-details"><img src="<%= `/product_img/${productTop[i]._id}.jpg` %>" alt="image"></a>
+                                    
+                                    <ul class="products-action">
+                                        <li>
+                                            <a href="#" data-tooltip="tooltip"data-placement="top" title="Add to Cart" >
+                                                <form action="index-4" method="POST" class="product-cart" >
+                                                    <label class="d-none">
+                                                        <input type="hidden" class="visually-hidden" name="product_id" value="<%= `${product[i]._id}` %>">
+                                                    </label>
+                                                    <label class="m-0 p-0">
+                                                        <i class="flaticon-shopping-cart" data-id="<%= `${product[i]._id}` %>"></i>
+                                                    <button type="submit" class="d-none">
+                                                    </button>
+                                                    </label>
+                                                </form>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="flaticon-heart"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-tooltip="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#productsQuickView">
+                                                <i class="flaticon-search"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                    <div class="sale">
+                                        <span>Sale</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="products-content">
+                                    <h3>
+                                        <a href="shop-details"><%= productTop[i].product_name %></a>
+                                    </h3>
+                                    <div class="price">
+                                        <span class="new-price">$<%= productTop[i].new_pricing %></span>
+                                        <span class="old-price">$<%= productTop[i].old_pricing %></span>
+                                    </div>
+                                    <ul class="rating">
+                                        <li>
+                                            <% for(let j = 0; j < productTop[i].total_count; j++) { %>
+                                                <i class='bx bxs-star'></i>
+                                            <% } %>   
+                                            <% for(let k = 0; k < 5 - productTop[i].total_count; k++) { %>
+                                                <i class='bx bx-star'></i>
+                                            <% } %>     
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                <% }else {%> 
+                    <h1>Hozircha Trendagi mahsulotlar yo'q afsuski :))))</h1>
+                <% } %>
+            </div>
+        </div>
+    </section>
+    <!-- End Top Products Area -->
+
+        <!-- Start Services Area -->
+        <section class="services-area bg-image pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What Services We Provide</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-box">
+                            <div class="icon">
+                                <i class="flaticon-apple"></i>
+                            </div>
+                            <h3>Natural Food</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="#" class="read-btn">Read More +</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-box">
+                            <div class="icon">
+                                <i class="flaticon-nature"></i>
+                            </div>
+                            <h3>Biologically Safe</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="#" class="read-btn">Read More +</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-box">
+                            <div class="icon">
+                                <i class="flaticon-forest"></i>
+                            </div>
+                            <h3>Biodiversity</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="#" class="read-btn">Read More +</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-box">
+                            <div class="icon">
+                                <i class="flaticon-organic"></i>
+                            </div>
+                            <h3>100% Organic</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="#" class="read-btn">Read More +</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-box">
+                            <div class="icon">
+                                <i class="flaticon-plant"></i>
+                            </div>
+                            <h3>Gardening</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="#" class="read-btn">Read More +</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-box">
+                            <div class="icon">
+                                <i class="flaticon-leaf"></i>
+                            </div>
+                            <h3>Organic Vegetables</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="#" class="read-btn">Read More +</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-box">
+                            <div class="icon">
+                                <i class="flaticon-heart"></i>
+                            </div>
+                            <h3>Fresh & Organic</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="#" class="read-btn">Read More +</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-box">
+                            <div class="icon">
+                                <i class="flaticon-apple"></i>
+                            </div>
+                            <h3>Organic Food</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt.</p>
+                            <a href="#" class="read-btn">Read More +</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Services Area -->
+        
+        <!-- Start Features Area -->
+        <section class="features-area pt-100 pb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="features-image">
+                            <img src="/img/features-2.png" alt="image">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="features-item">
+                            <div class="features-content">
+                                <span>Features</span>
+                                <h3>Special Product For Orgo Loving People</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                            </div>
+
+                            <div class="features-inner-content">
+                                <div class="icon">
+                                    <i class="flaticon-nature"></i>
+                                </div>
+                                <h4>Natural Products</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            </div>
+
+                            <div class="features-inner-content">
+                                <div class="icon">
+                                    <i class="flaticon-leaf"></i>
+                                </div>
+                                <h4>Best Food For Health</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            </div>
+
+                            <div class="features-inner-content">
+                                <div class="icon">
+                                    <i class="flaticon-medal"></i>
+                                </div>
+                                <h4>Award-Winning Company</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Features Area -->
+   <!-- Start Featured Products Area -->
+   <% var productNews %>
+   <section class="featured-products-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>Featured  Products</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+        </div>
+        
+        <div class="row">
+            <% if(productNews.length) { %>
+                <% for(let i = 0; i < productNews.length; i++) { %>
+                <div class="col-lg-3 col-md-6">
+                    <div class="featured-products-item">
+                        <div class="products-image">
+                            <a href="shop-details"><img src="<%= `/product_img/${productNews[i]._id}.jpg` %>" alt="image"></a>
+                            
+                            <ul class="products-action">
+                                <li>
+                                    <a href="#" data-tooltip="tooltip"data-placement="top" title="Add to Cart" >
+                                        <form action="index-4" method="POST" class="product-cart" >
+                                            <label class="d-none">
+                                                <input type="hidden" class="visually-hidden" name="product_id" value="<%= `${product[i]._id}` %>">
+                                            </label>
+                                            <label class="m-0 p-0">
+                                                <i class="flaticon-shopping-cart" data-id="<%= `${product[i]._id}` %>"></i>
+                                            <button type="submit" class="d-none">
+                                            </button>
+                                            </label>
+                                        </form>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="flaticon-heart"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" data-tooltip="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#productsQuickView">
+                                        <i class="flaticon-search"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                            <div class="new">
+                                <span>New</span>
+                            </div>
+                        </div>
+                        
+                        <div class="products-content">
+                            <h3>
+                                <a href="shop-details"><%= productNews[i].product_name %></a>
+                            </h3>
+                            <div class="price">
+                                <span class="new-price">$<%= productNews[i].new_pricing %></span>
+                                <span class="old-price">$<%= productNews[i].old_pricing %></span>
+                            </div>
+                            <ul class="rating">
+                                <li>
+                                    <% for(let j = 0; j < productNews[i].total_count; j++) { %>
+                                        <i class='bx bxs-star'></i>
+                                    <% } %>   
+                                    <% for(let k = 0; k < 5 - productNews[i].total_count; k++) { %>
+                                        <i class='bx bx-star'></i>
+                                    <% } %>     
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            <% }else{ %>
+                <h1>Yangi mahsulotlardan hozircha yo'q ekan xo'jayin</h1>
+            <% } %>
+        </div>
+    </div>
+</section>
+<!-- End Featured Products Area -->
+
+<%- include('section/deal-area') %>
+<%- include('section/our-farm') %>
+<%- include('section/gellerys') %>
+<%- include('section/feedback') %>
+<%- include('section/latest-blog') %>
+<%- include('parts/footer') %>
